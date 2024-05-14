@@ -6,6 +6,7 @@
 package codigo;
 
 import static codigo.Tokens.Int;
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,6 +18,7 @@ import java.io.StringReader;
 import java.nio.file.Files;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java_cup.runtime.Symbol;
 import javax.swing.JFileChooser;
 
 /**
@@ -101,7 +103,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                             resultado +=" <Numero>\t\t" +lexer.lexeme+"\n";
                             break;
                             case ERROR:
-                            resultado +=" <Símbolo no definido>\t" +lexer.lexeme+"\n";
+                            resultado +=" <Símbolo no definido>\n";
                             break;
                             default:
                                 resultado +=" < " +lexer.lexeme+" >\n";
@@ -161,6 +163,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         btnLimpiar.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Analizador Sintáctico");
@@ -169,10 +176,20 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel2.setText("Analizador Léxico");
 
         btnAceptar.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        btnAceptar.setText("Aceptar");
+        btnAceptar.setText("Analizar");
+        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarActionPerformed(evt);
+            }
+        });
 
         btnLimpiar2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         btnLimpiar2.setText("Limpiar");
+        btnLimpiar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiar2ActionPerformed(evt);
+            }
+        });
 
         txtAceptar.setColumns(20);
         txtAceptar.setRows(5);
@@ -263,6 +280,29 @@ public class FrmPrincipal extends javax.swing.JFrame {
             Logger.getLogger(FrmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnAnalizarActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+       txtAnalizar.setText("");
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+        String ST=txtAbrir.getText();
+        Sintax s=new Sintax(new codigo.LexerCup(new StringReader(ST)));
+        
+        try {
+            s.parse();
+            txtAceptar.setText("Analizis realizado correctamente");
+            txtAceptar.setForeground(new Color(25,111,61));
+        } catch (Exception ex) {
+            Symbol sym=s.getS();
+            txtAceptar.setText("Error de sintaxis. Linea: "+(sym.right +1)+" Columna: "+(sym.left+1)+ ", Texto: \""+sym.value +"\"");
+            txtAceptar.setForeground(Color.red);
+        }
+    }//GEN-LAST:event_btnAceptarActionPerformed
+
+    private void btnLimpiar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiar2ActionPerformed
+        txtAceptar.setText("");
+    }//GEN-LAST:event_btnLimpiar2ActionPerformed
 
     /**
      * @param args the command line arguments
