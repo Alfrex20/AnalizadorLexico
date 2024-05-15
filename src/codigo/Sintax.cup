@@ -15,7 +15,7 @@ parser code
 }
 :};
 
-terminal Int, If,Else, While, Linea, Igual, Suma, Resta, Multiplicacion, Division, Parentesis_a, Parentesis_c, Llave_a, Llave_c, Main, P_coma, Identificador, Numero, ERROR;
+terminal Int, If,Else, While, Linea, Igual, Suma, Resta, Multiplicacion, Division, Parentesis_a, Parentesis_c, Llave_a, Llave_c, Main, P_coma, Punto, Identificador, Numero, ERROR;
 
 non terminal INICIO, SENTENCIA, DECLARACION;
 

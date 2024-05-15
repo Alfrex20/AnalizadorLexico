@@ -96,6 +96,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
                             case P_coma:
                             resultado +=" <Punto y Coma>\t" +lexer.lexeme+"\n";
                             break;
+                            case Punto:
+                            resultado += "<Punto>\t"+lexer.lexeme+"\n";
                             case Identificador:
                             resultado +=" <Identificador>\t\t" +lexer.lexeme+"\n";
                             break;

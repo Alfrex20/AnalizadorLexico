@@ -26,6 +26,7 @@ public enum Tokens {
     Llave_c,
     Main,
     P_coma,
+    Punto,
     Identificador,
     Numero,
     ERROR
