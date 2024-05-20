@@ -98,12 +98,16 @@ public class FrmPrincipal extends javax.swing.JFrame {
                             break;
                             case Punto:
                             resultado += "<Punto>\t"+lexer.lexeme+"\n";
+                            break;
                             case Identificador:
                             resultado +=" <Identificador>\t\t" +lexer.lexeme+"\n";
                             break;
                             case Numero:
                             resultado +=" <Numero>\t\t" +lexer.lexeme+"\n";
                             break;
+                            case ComillaDoble:
+                                resultado +="<Comilla Doble>\t"+lexer.lexeme+"\n";
+                                break;
                             case ERROR:
                             resultado +=" <Símbolo no definido>\n";
                             break;
@@ -136,126 +140,113 @@ public class FrmPrincipal extends javax.swing.JFrame {
         btnLimpiar2 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         txtAceptar = new javax.swing.JTextArea();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(535, 630));
+        setMinimumSize(new java.awt.Dimension(535, 630));
+        setPreferredSize(new java.awt.Dimension(535, 630));
+        getContentPane().setLayout(null);
 
+        txtAbrir.setBackground(new java.awt.Color(204, 204, 204));
         txtAbrir.setColumns(20);
         txtAbrir.setRows(5);
         jScrollPane1.setViewportView(txtAbrir);
 
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(17, 82, 223, 299);
+
+        btnAbrir.setBackground(new java.awt.Color(204, 204, 204));
         btnAbrir.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnAbrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/abrir-documento.png"))); // NOI18N
         btnAbrir.setText("Abrir Archivo");
         btnAbrir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAbrirActionPerformed(evt);
             }
         });
+        getContentPane().add(btnAbrir);
+        btnAbrir.setBounds(20, 40, 150, 31);
 
+        txtAnalizar.setBackground(new java.awt.Color(204, 204, 204));
         txtAnalizar.setColumns(20);
         txtAnalizar.setRows(5);
         jScrollPane2.setViewportView(txtAnalizar);
 
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(258, 82, 246, 299);
+
+        btnAnalizar.setBackground(new java.awt.Color(204, 204, 204));
         btnAnalizar.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnAnalizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar (1).png"))); // NOI18N
         btnAnalizar.setText("Analizar");
         btnAnalizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAnalizarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnAnalizar);
+        btnAnalizar.setBounds(260, 40, 120, 31);
 
+        btnLimpiar.setBackground(new java.awt.Color(204, 204, 204));
         btnLimpiar.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/limpiar.png"))); // NOI18N
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLimpiarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnLimpiar);
+        btnLimpiar.setBounds(394, 40, 111, 30);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Cooper Black", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Analizador Sintáctico");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(151, 393, 220, 22);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Cooper Black", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Analizador Léxico");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(157, 6, 180, 22);
 
+        btnAceptar.setBackground(new java.awt.Color(204, 204, 204));
         btnAceptar.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnAceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar (1).png"))); // NOI18N
         btnAceptar.setText("Analizar");
         btnAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAceptarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnAceptar);
+        btnAceptar.setBounds(17, 421, 120, 31);
 
+        btnLimpiar2.setBackground(new java.awt.Color(204, 204, 204));
         btnLimpiar2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnLimpiar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/limpiar.png"))); // NOI18N
         btnLimpiar2.setText("Limpiar");
         btnLimpiar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLimpiar2ActionPerformed(evt);
             }
         });
+        getContentPane().add(btnLimpiar2);
+        btnLimpiar2.setBounds(358, 421, 120, 31);
 
+        txtAceptar.setBackground(new java.awt.Color(204, 204, 204));
         txtAceptar.setColumns(20);
         txtAceptar.setRows(5);
         jScrollPane3.setViewportView(txtAceptar);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(166, 166, 166)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(177, 177, 177)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnAbrir)
-                                    .addComponent(btnAceptar))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(btnAnalizar)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(25, 25, 25))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(btnLimpiar2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(20, 20, 20)))
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addGap(9, 9, 9)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnAnalizar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAbrir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnLimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAceptar)
-                    .addComponent(btnLimpiar2))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
-        );
+        getContentPane().add(jScrollPane3);
+        jScrollPane3.setBounds(17, 466, 487, 114);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo.jpg"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(0, 0, 520, 590);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -349,6 +340,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnLimpiar2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

@@ -29,6 +29,7 @@ while {lexeme=yytext(); return While;}
 "main" {lexeme=yytext(); return Main;}
 ";" {lexeme=yytext(); return P_coma;}
 "." {lexeme=yytext(); return Punto;}
+"\"" {lexeme=yytext(); return ComillaDoble;}
 {L}({L}|{D})* {lexeme=yytext(); return Identificador;}
 ("(-"{D}+")")|{D}+ {lexeme=yytext(); return Numero;}
  . {return ERROR;}

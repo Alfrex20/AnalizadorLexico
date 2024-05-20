@@ -37,6 +37,7 @@ while {return new Symbol(sym.While, yychar, yyline, yytext());}
 "main" {return new Symbol(sym.Main, yychar, yyline, yytext());}
 ";" {return new Symbol(sym.P_coma, yychar, yyline, yytext());}
 "." {return new Symbol(sym.Punto, yychar, yyline, yytext());}
+"\"" {return new Symbol(sym.ComillaDoble, yychar, yyline, yytext());}
 {L}({L}|{D})* {return new Symbol(sym.Identificador, yychar, yyline, yytext());}
 ("(-"{D}+")")|{D}+ {return new Symbol(sym.Numero, yychar, yyline, yytext());}
  . {return new Symbol(sym.ERROR, yychar, yyline, yytext());}

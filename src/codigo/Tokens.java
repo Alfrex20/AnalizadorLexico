@@ -27,6 +27,7 @@ public enum Tokens {
     Main,
     P_coma,
     Punto,
+    ComillaDoble,
     Identificador,
     Numero,
     ERROR
